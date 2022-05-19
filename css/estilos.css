@@ -184,6 +184,14 @@ html{
 .servicio div p{
     font-size:1rem;
 }
+.servicio{
+    filter:grayscale(80%);
+    transition: all 1s;
+}
+.servicio:hover{
+    filter:grayscale(0%);
+    transform: scale(1.2,1.2);
+}
 
 
 /* FORMULARIOS*/
@@ -235,7 +243,7 @@ label{
 }
 /* HEADER */
 header{
-    background-color: rgb(135, 80, 170);
+    background-color: #8750aa;
     padding-top: 2%;
     padding-bottom: 2%;
     display: flex;
@@ -260,6 +268,10 @@ header li{
 header li a{
     text-decoration: none;
     color: rgb(255, 255, 255);
+    transition: all .5s;
+}
+header li:hover{
+    transform: scale(1.2,1.2);
 }
 header form input{
     border:0;
@@ -285,6 +297,11 @@ header form button:hover{
 }
 header form button img{
     width: 10px;
+}
+header img:hover{
+    transition: all 1.5s;
+    animation: roll 5s;
+    transform: rotate(360deg);
 }
 @media only screen and (max-width: 600px) {
     header nav ul{
@@ -401,7 +418,8 @@ li a{
 
 /* FOOTER */
 #footer {
-    background-color: rgb(135, 80, 170);
+    background: rgb(135,80,170);
+    background: linear-gradient(90deg, rgba(135,80,170,1) 44%, rgba(194,141,228,1) 98%);
     width: 100%;
     display: flex;
     justify-content:space-around;
