@@ -36,7 +36,11 @@ html{
 #contacto fieldset legend{
     align-content: center;
 }
- 
+@media only screen and (max-width: 600px) {
+    #contacto{
+        width: 98%;
+    }
+}
 /* SECCION NOSOTROS */ 
 
 .head img{
@@ -76,28 +80,20 @@ html{
     max-height:200px;
     
 }
-.productos li div{
-    margin:2%;
-}
-.producto div{
+.productos{
     text-align: center;
-    align-content: center;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:1.5rem;
 }
-.producto div a{
-    align-content: center;
+.productos .card{
+    margin:0px auto;
 }
-.producto img{
-    width: 100%;
-    max-width: 150px;
-    border-radius:500px;
+.productos .card img{
+    width: 70%;
+    border-radius: 10px 10px 10px 10px;
 }
-.producto div h3{
-    font-size:1.2rem;
-}
-.producto div p{
-    font-size:1rem;
-}
-
 .seccion2 img{
     width: 100%;
     height: 200px;
@@ -116,11 +112,16 @@ html{
     border-radius:5%;*/
     display: inline-block;
     position: relative;
+    align-content: center;
+    padding: 20px;
+    /* border: 2px solid rgb(135, 80, 170);
+    border-radius:20%;*/
+    display: flex;  flex-direction:column; 
+    max-width: 300px;
+    height: 400px;
+
 }
-.servicios{
-    margin:1%;
-    margin-bottom:80px;
-}
+
 .servicios ul{
     align-content: center;
     display: flex;
@@ -129,12 +130,11 @@ html{
 }
 .servicios .servicio{
     align-content: center;
-    padding: 20px;
+    
     /* border: 2px solid rgb(135, 80, 170);
     border-radius:20%;*/
     display: flex;  flex-direction:column; 
-    max-width: 200px;
-    max-height:200px;
+    
 }
 .servicio p{
     color:white;
@@ -150,21 +150,21 @@ html{
     background-image: url(../images/pelu2.webp);
     background-size: cover;
     border-radius:20%;
-    height:200px;
+    height:300px;
     justify-content:space-between;
 }
 #servicio2{
     background-image: url(../images/veterinaria.jpg);
     background-size: cover;
     border-radius:20%;
-    height:200px;
+    height:300px;
     justify-content:space-between;
 }
 #servicio3{
     background-image: url(../images/microchip.jpg);
     background-size: cover;
     border-radius:20%;
-    height:200px;
+    height:300px;
     justify-content:space-between;
 }
 .servicios li div{
@@ -201,6 +201,10 @@ form .campo{
     padding: 5px;
     background-color:rgba(255, 255, 255, 0);
     width: 100%;
+}
+.campo:focus{
+    border-bottom:2px solid rgb(72, 185, 121);
+    outline:none;
 }
 form textarea{
     border:0;
@@ -249,7 +253,6 @@ header{
     position: sticky;
     top: 0;
     z-index: 10;
-    margin-bottom: -150px;
 }
 
 header li a{
@@ -267,8 +270,19 @@ header img:hover{
     transform: rotate(360deg);
 }
 nav{
-    background: rgba(136, 80, 170, 0.612) !important;
+    background: rgb(135,80,170)!important;
+    background: linear-gradient(90deg, rgba(135,80,170,1) 44%, rgba(194,141,228,1) 98%)!important;
 }
+.navbar-nav{
+    text-align: center!important;
+}
+.navbar-toggler{
+    color: rgb(72, 185, 121)!important;
+}
+.navbar-toggler-icon{
+    color: rgb(72, 185, 121)!important;
+}
+
 .form-control{
     background: #ffffff00 !important;
     border: 0!important;
@@ -298,7 +312,7 @@ p{
 }
 h1{
     padding-bottom: 1rem;
-    color:  rgb(135, 80, 170);
+    color:  rgb(135, 80, 170)!important;
     font-family: 'Titan One', cursive;
     font-size: 2rem;
 
@@ -307,8 +321,8 @@ h2{
     font-family: 'Oxygen', sans-serif;
     color: rgb(65, 65, 65);
 }
-h3{
-    color:  rgb(135, 80, 170);
+h3, h4{
+    color:  rgb(135, 80, 170)!important;
     font-family: 'Oxygen', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
@@ -386,7 +400,12 @@ img {
     padding-top:10px;
 }
 @media only screen and (max-width: 600px) {
-    
+    #footer{
+        display: flex;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    align-items: center;
+    }
 }
 
 /* SLIDER */
@@ -399,7 +418,19 @@ img {
         width: 100%;
     }
     
- 
+ .carru-1{
+     display:none;
+ }
+ @media only screen and (max-width: 600px) {
+    .carru-2{
+        display: none;
+    }
+    .carru-1{
+        display: block;
+    }
+}
+
+
 
 /* PASTILLAS CLIENTES */
 
@@ -441,7 +472,13 @@ img {
 #clientes div img{
     object-fit: cover;
 }
-
+.btn{
+    background: rgb(135, 80, 170)!important;
+    border: 0!important;
+}
+.btn:hover{
+    background: rgb(72, 185, 121)!important;
+}
 .home {
     display: grid; 
   grid-template-columns: 1fr; 
